@@ -12,7 +12,15 @@ return {
       require "configs.lspconfig"
     end,
   },
-
+  {
+    "github/copilot.nvim",
+    lazy = false,
+    url = "git@github.com:github/copilot.vim.git",
+    config = function()
+    -- Habilitar para todos los tipos de archivo
+    vim.g.copilot_filetypes = { ["*"] = true }
+   end,
+  },
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
