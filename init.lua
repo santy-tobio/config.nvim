@@ -21,9 +21,21 @@ require("lazy").setup({
     branch = "v2.5",
     import = "nvchad.plugins",
   },
-
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter", -- Obligatorio
+      "nvim-tree/nvim-web-devicons",    -- Opcional, si prefieres íconos
+      -- "echasnovski/mini.nvim",       -- Opcional, si usas mini.nvim
+    },
+    opts = {"n", "v"}, -- Configuración vacía por ahora, puedes personalizarla luego
+   latex = {enabled = true}, -- Habilita la vista previa de LaTeX
+    ft = { "markdown" }, -- Solo carga en archivos Markdown
+  },
   { import = "plugins" },
 }, lazy_config)
+
+
 
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
